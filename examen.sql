@@ -9,10 +9,13 @@ SELECT titre
     WHERE genre = "drame";
 
 exo 3
-SELECT nomRole
-	from artiste natural join role
+SELECT titre, nomRôle
+	from artiste 
+    natural join role
+    NATURAL JOIN film
     	where nom = "Willis"
-    	and prenom = "Bruce"
+    	and prénom = "Bruce"
+        AND idActeur = idArtiste
 
 exo 4
 SELECT nom, prénom, idRéalisateur
@@ -126,7 +129,8 @@ from Film
 where idFilm not in  (select idFilm  from role)
 
 exo 18
-SELECT nom , titre FROM ((notation INNER JOIN film ON notation.idFilm = film.idFilm) 
+SELECT nom , titre 
+FROM ((notation INNER JOIN film ON notation.idFilm = film.idFilm) 
 INNER JOIN internaute ON notation.email = internaute.email) 
 WHERE nom = "Nom1" AND prénom = "Prénom1";
 
