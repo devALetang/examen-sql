@@ -32,6 +32,7 @@ exo 6
 SELECT nom, prénom, nomRôle
 	from role NATURAL JOIN artiste
     WHERE nomRôle = "Chewbacca"
+    AND idActeur = idArtiste
 
 exo 7
 SELECT titre, nom, prénom, nomRôle
